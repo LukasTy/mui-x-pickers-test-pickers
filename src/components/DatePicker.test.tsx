@@ -13,4 +13,13 @@ describe("change date picker value test 1", () => {
 
     expect(screen.getByDisplayValue("3000/01/01")).toBeVisible();
   });
+
+  test("use datepicker label; set string, simplified", async () => {
+    render(<DatePickerX />);
+
+    const input = screen.getByLabelText("datepicker_label");
+    fireEvent.change(input, { target: { value: "3000/01/01" } });
+
+    expect(screen.getByDisplayValue("3000/01/01")).toBeVisible();
+  });
 });
